@@ -41,8 +41,10 @@ app.use(
   })
 );
 
+//homePage
+app.use(express.static("public"));
 app.get("/", (req, res) => {
-  res.send('<h1>Jobs api</h1><a href="/api-docs">Documentation</a>');
+  res.sendFile("index.html", { root: "public" });
 });
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
