@@ -1,69 +1,34 @@
-#### Setup
+# Node.js Jobs API – Production-Ready Backend (JWT + Swagger + MongoDB)
+
+Fully functional, secure REST API built with Node.js, Express, and MongoDB.  
+Deployed and ready to test right now!
+
+### Live Demo
+**Swagger UI** → https://jobs-api-nodejs-8szj.onrender.com/api-docs/
+
+Try the endpoints yourself — no setup needed!
+
+### Features
+- Complete user authentication (register + login)
+- JWT + protected routes
+- Full CRUD for jobs (create, read, update, delete)
+- Pagination, sorting, filtering, search
+- Input validation (Mongoose + custom errors)
+- Password hashing with bcryptjs
+- Rate limiting, Helmet, CORS, XSS protection
+- Interactive Swagger/OpenAPI documentation
+
+### Tech Stack
+- Node.js / Express
+- MongoDB + Mongoose
+- JWT authentication
+- bcryptjs
+- express-rate-limit, helmet, cors, xss-clean
+- Swagger UI
+
+### Quick Start (Local)
 
 ```bash
-npm install && npm start
-```
-
-#### Database Connection
-
-1. Import connect.js
-2. Invoke in start()
-3. Setup .env in the root
-4. Add MONGO_URI with correct value
-
-#### Routers
-
-- auth.js
-- jobs.js
-
-#### User Model
-
-Email Validation Regex
-
-```regex
-/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-```
-
-#### Register User
-
-- Validate - name, email, password - with Mongoose
-- Hash Password (with bcryptjs)
-- Save User
-- Generate Token
-- Send Response with Token
-
-#### Login User
-
-- Validate - email, password - in controller
-- If email or password is missing, throw BadRequestError
-- Find User
-- Compare Passwords
-- If no user or password does not match, throw UnauthenticatedError
-- If correct, generate Token
-- Send Response with Token
-
-#### Mongoose Errors
-
-- Validation Errors
-- Duplicate (Email)
-- Cast Error
-
-#### Security
-
-- helmet
-- cors
-- xss-clean
-- express-rate-limit
-
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
+git clone https://github.com/your-username/jobs-api.git
+cd jobs-api
+npm install
